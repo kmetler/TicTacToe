@@ -48,7 +48,16 @@ namespace TicTacToe
             if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0] && board[0, 2] != '-')
                 return board[0, 2];
 
-            return ' '; // No winner
+            //Check for a draw (if no '-' are left)
+            foreach(char cell in board)
+            {
+                if (cell == '-')
+                {
+                    return ' '; //Game still ongoing
+                }
+            }
+            
+            return 'D'; //Draw
         }
     }
 }

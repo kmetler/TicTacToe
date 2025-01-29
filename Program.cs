@@ -47,12 +47,17 @@ while (true)
     board[row - 1, col - 1] = currentPlayer;
 
     //Check if winner
-    char result = ' ';
-    result = tools.DetermineWinner();
-    if (result != ' ')
+    char result = tools.DetermineWinner();
+    if (result == 'X' || result == 'O')
     {
         tools.PrintBoard();
         Console.WriteLine($"\nPlayer {currentPlayer} Wins!!!");
+        break;
+    }
+    else if (result == 'D') //Draw case
+    {
+        tools.PrintBoard();
+        Console.WriteLine("\nIt's a draw! No more moves left.");
         break;
     }
 
