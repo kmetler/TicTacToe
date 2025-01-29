@@ -1,8 +1,14 @@
 ﻿//Make a Tic Tac Toe Game
 //Welcome user to the game
-Console.WriteLine("Welcome to Tic Tac Toe!")
+Console.WriteLine("Welcome to Tic Tac Toe!");
 
 //Create game board array to store players' choices
+char[,] board =
+{
+    {'-','-','-'},
+    {'-','-','-'},
+    {'-','-','-'},
+};
 
 //Ask each player in turn for their choice and update the game board array
 
