@@ -30,12 +30,12 @@ while (true)
         string input = Console.ReadLine();
         string[] parts = input.Split(",");
 
-        if (parts.Length == 2 &&
-            int.TryParse(parts[0], out row) &&
+        if (parts.Length == 2 && //Only 2 inputs
+            int.TryParse(parts[0], out row) && //Check to see if number
             int.TryParse(parts[1], out col) &&
-            row >= 1 && row <= 3 &&
+            row >= 1 && row <= 3 && //Check to see if on board
             col >= 1 && col <= 3 &&
-            board[row -1, col - 1] == '-')
+            board[row -1, col - 1] == '-') //Check to see if blank
         {
             break; //Valid input
         }

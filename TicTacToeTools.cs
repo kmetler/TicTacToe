@@ -18,9 +18,9 @@ namespace TicTacToe
         public void PrintBoard()
         {
             Console.WriteLine();
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++) //loop through rows
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < 3; j++) //loop through cols
                 {
                     Console.Write(board[i, j] + " ");
                 }
