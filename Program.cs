@@ -1,8 +1,6 @@
 ﻿//Make a Tic Tac Toe Game
 using TicTacToe;
 
-TicTacToeTools tools = new TicTacToeTools();
-
 //Welcome user to the game
 Console.WriteLine("Welcome to Tic Tac Toe!");
 
@@ -13,12 +11,15 @@ char[,] board =
     {'-','-','-'},
     {'-','-','-'},
 };
+
+TicTacToeTools tools = new TicTacToeTools(board);
+
 char currentPlayer = 'X'; //Start game with X
 
 //Ask each player in turn for their choice and update the game board array
 while (true)
 {
-    //tools.PrintBoard(board);
+    tools.PrintBoard();
 
     Console.WriteLine($"Player {currentPlayer}, enter your move (row and column e.g.(1,2)");
     int row, col;
@@ -46,7 +47,7 @@ while (true)
     board[row - 1, col - 1] = currentPlayer;
 
     //Check if winner
-    //tools.DetermineWinner(board);
+    tools.DetermineWinner();
 
     //Switch player
     currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
