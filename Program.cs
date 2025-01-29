@@ -21,7 +21,7 @@ while (true)
 {
     tools.PrintBoard();
 
-    Console.WriteLine($"Player {currentPlayer}, enter your move (row and column e.g.(1,2)");
+    Console.WriteLine($"\nPlayer {currentPlayer}, enter your move (row and column e.g.(1,2))");
     int row, col;
 
     //Make sure it is a valid input
@@ -40,14 +40,21 @@ while (true)
             break; //Valid input
         }
 
-        Console.WriteLine("Invalid move. Please enter row and column as \"1,2\" (1-3) and choose and empty spot.");
+        Console.WriteLine("\nInvalid move. Please enter row and column as \"1,2\" (1-3) and choose and empty spot.");
     }
 
     //Place move
     board[row - 1, col - 1] = currentPlayer;
 
     //Check if winner
-    tools.DetermineWinner();
+    char result = ' ';
+    result = tools.DetermineWinner();
+    if (result != ' ')
+    {
+        tools.PrintBoard();
+        Console.WriteLine($"\nPlayer {currentPlayer} Wins!!!");
+        break;
+    }
 
     //Switch player
     currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
