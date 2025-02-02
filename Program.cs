@@ -52,12 +52,14 @@ while (true)
     {
         tools.PrintBoard();
         Console.WriteLine($"\nPlayer {currentPlayer} Wins!!!");
+        Console.ReadKey();
         break;
     }
     else if (result == 'D') //Draw case
     {
         tools.PrintBoard();
         Console.WriteLine("\nIt's a draw! No more moves left.");
+        Console.ReadKey();
         break;
     }
 
