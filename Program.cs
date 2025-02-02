@@ -1,6 +1,6 @@
 ﻿//Make a Tic Tac Toe Game
 using TicTacToe;
-
+using System;
 //Welcome user to the game
 Console.WriteLine("Welcome to Tic Tac Toe!");
 
@@ -28,7 +28,7 @@ while (true)
     while (true)
     {
         string input = Console.ReadLine();
-        string[] parts = input.Split(",");
+        string[] parts = input.Split(',');
 
         if (parts.Length == 2 && //Only 2 inputs
             int.TryParse(parts[0], out row) && //Check to see if number
